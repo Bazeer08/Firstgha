@@ -1,0 +1,12 @@
+name: FirstmWorkflow
+on: workflow_dispatch
+jobs:
+     First_Job:
+          runs-on: ubuntu-latest
+          steps:
+            - name: This is Step 1 
+              run: echo creating a yml file manually
+            - name: This is Step 2
+              run: |
+                echo Line 1
+                echo Line 2  
