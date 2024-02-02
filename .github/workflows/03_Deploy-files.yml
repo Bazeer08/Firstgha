@@ -43,15 +43,15 @@ jobs:
         run: npm run build
       - name: Publish JS filename
         id: publish
-        run: find dist/gha-demo/polyfills/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
+        run: find dist/${{ github.event.repository.name }}/browser/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
-        #   path: dist
-          path: |
-            dist
-            package.json
+          path: dist
+        #   path: |
+        #     dist
+        #     package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
