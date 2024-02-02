@@ -1,0 +1,14 @@
+name: Events Demo1
+push:
+     branches:
+            - master
+        paths:
+            - '.github/workflows/02*.yml'
+jobs:
+    events-jobs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print greetings
+              run: echo "Hello World!"
+            - name: output event data
+              run: echo "${{ toJSON(github.event) }}"  
