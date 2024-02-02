@@ -1,9 +1,10 @@
 name: Events Demo1
-push:
-     branches:
-            - master
-        paths:
-            - '.github/workflows/02*.yml'
+on:
+ push:
+    branches:
+        - master
+    paths:
+        - '.github/workflows/02*.yml'
 jobs:
     events-jobs:
         runs-on: ubuntu-latest
