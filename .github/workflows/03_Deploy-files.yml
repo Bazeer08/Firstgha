@@ -43,7 +43,7 @@ jobs:
         run: npm run build
       - name: Publish JS filename
         id: publish
-        run: find dist/${{ github.event.repository.name }}/browser/*.ts -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
+        run: find dist/gha-demo/browser/*.ts -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
